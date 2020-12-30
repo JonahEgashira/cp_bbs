@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <!-- 以下で、ユーザー名を出力してください -->
+      <h2><%= @user.name %></h2>
+      <!-- 以下で、メールアドレスを出力してください -->
+      <p><%= @user.email %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <%= link_to("編集", "/users/#{@user.id}/edit") %>
+    </div>
+  </div>
+</div>

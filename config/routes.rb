@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   #ログイン関係
   get "login" => "users#login_form"
   post "login" => "users#login"
+  post "logout" => "users#logout"
 
   #ユーザー関係
   post "users/:id/update" => "users#update"

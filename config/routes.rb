@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
 
+  resources :posts do
+    resources :comments, only: [:create]
+  end
+
   #ホーム、about
   get "/" => "home#top"
   get "about" => "home#about"

@@ -1,6 +1,8 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
+
+
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
@@ -12,17 +14,33 @@
         <%= @post.created_at %>
       </div>
 
-      <% @comments.each do |comment| %>
-        <%= comment.comment %> 
-      <% end %>
-
       <% if @post.user_id == @current_user.id %>
         <div class="post-menus">
           <%= link_to("編集", "/posts/#{@post.id}/edit") %>
           <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
         </div>
       <% end %>
-      
+
     </div>
+
+    <div class="comment-wrapper border-top　mb-10">
+      <p class="mt-5">コメント一覧</p>
+        <% @comments.each do |c| %>
+          <div>
+            <%= c.user.name unless c.user.blank? %>
+            <br />
+            <%= c.content %>
+          </div>
+          <br />
+        <% end %>
+
+      <%= form_with(model: [@post, @comment], local: true) do |f| %>
+      <%= f.text_area :content, class: "form-control", rows: 5 %>
+      <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+     <% end %>
+    </div>
+
   </div>
 </div>

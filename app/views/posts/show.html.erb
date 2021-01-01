@@ -26,8 +26,11 @@
     <div class="comment-wrapper">
       <h2 class="title">コメント一覧</h2>
 
+        <% if @comments.blank? %>
+          <p>最初のコメントをしよう！</p>
+        <% end %>
+
         <% @comments.each do |comment| %>
-          <% if comment.present? %>
           <div class="comments-show-item">
             <div class="comments-user-name">
               <%= comment.user.name unless comment.user.blank? %>
@@ -41,7 +44,6 @@
             </div>
             
           </div>
-          <% end %>
         <% end %>
 
 

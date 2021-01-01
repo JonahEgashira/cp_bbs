@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   #ログイン関係
   get "login" => "users#login_form"
   post "login" => "users#login"
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
 
+
   #投稿関係
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
@@ -21,8 +24,9 @@ Rails.application.routes.draw do
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
 
+  #コメント
   resources :posts do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
 
   #ホーム、about

@@ -30,9 +30,15 @@
             <div class="comments-user-name">
               <%= comment.user.name unless comment.user.blank? %>
             </div>
-            <%= comment.content %>
-          </div>
+            <div class="comments-content">
+              <%= comment.content %>
+            </div>
 
+            <div class="post-menus">
+              <%= link_to "DELETE", [comment.post, comment], method: :delete %>
+            </div>
+            
+          </div>
         <% end %>
 
       <div class="form">

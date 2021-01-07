@@ -29,6 +29,7 @@
 
 .user-name a {
   font-weight: 600;
+  font-style: bold;
 }
 
 .user-name a:hover {
@@ -46,6 +47,7 @@
   text-align: left;
   display: table-cell;
   vertical-align: middle;
+  font-style: bold;
 }
 
 /* users/show ================================ */
@@ -117,4 +119,32 @@
 /* users/new, users/edit ================================ */
 .users-form input {
   margin-bottom: 15px;
+}
+
+.red {
+  color :red
+}
+.orange {
+  color :orange
+}
+.yellow {
+  color : yellow
+}
+.blue {
+  color :blue
+}
+.cyan {
+  color :cyan
+}
+.green {
+  color :green
+}
+.brown {
+  color :brown
+}
+.gray {
+  color :gray
+}
+.black {
+  color :black
 }

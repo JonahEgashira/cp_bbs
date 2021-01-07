@@ -39,7 +39,6 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-/* 共通レイアウト ================================ */
 body {
   color: #2d3133;
   background-color: #3ecdc6;
@@ -127,7 +126,7 @@ header {
   height: auto;
   min-height: 100%;
   color: white;
-  background-color: #3ecdc6;
+  background-color: #009dff;
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
@@ -150,7 +149,7 @@ header {
 
 /* about ================================ */
 .about-main {
-  padding: auto;
+  padding: 10px;
   color: black;
 }
 
@@ -162,8 +161,10 @@ header {
 }
 
 .about-main p {
+  margin: 20px;
   font-weight: 200;
   font-size: 20px;
+  line-height: 2.0;
 }
 
 .about-img {
@@ -232,7 +233,7 @@ header {
 .flash {
   padding: 10px 0;
   color: white;
-  background: rgb(88, 207, 251);
+  background: rgb(70, 207, 255);
   text-align: center;
   position: relative;
   z-index: 10;

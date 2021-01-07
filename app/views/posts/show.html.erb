@@ -1,11 +1,31 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-
+      <% user_color = "black" %>
+      <% user = @user %> 
+      <% if user.rate >= 2800    %>   
+      <%   user_color = "red" %>
+      <% elsif user.rate >= 2400 %>
+      <%   user_color = "orange" %>
+      <% elsif user.rate >= 2000 %>
+      <%   user_color = "yellow" %>
+      <% elsif user.rate >= 1600 %>
+      <%   user_color = "blue" %>
+      <% elsif user.rate >= 1200 %>
+      <%   user_color = "cyan" %>
+      <% elsif user.rate >= 800 %>
+      <%   user_color = "green" %>
+      <% elsif user.rate >= 400 %>
+      <%   user_color = "brown" %>
+      <% elsif user.rate >= 0 %>
+      <%   user_color = "gray" %>
+      <% else %>
+      <%   user_color = "black" %>
+      <% end %>
 
       <div class="post-user-name">
         <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+        <%= link_to(@user.name, "/users/#{@user.id}", :style => "color:#{user_color};") %>
       </div>
       <p>
         <%= @post.content %>
@@ -33,7 +53,30 @@
         <% @comments.each do |comment| %>
           <div class="comments-show-item">
             <div class="comments-user-name">
-              <%= comment.user.name unless comment.user.blank? %>
+
+              <% user = comment.user %> 
+              <% if user.rate >= 2800    %>   
+              <%   user_color = "red" %>
+              <% elsif user.rate >= 2400 %>
+              <%   user_color = "orange" %>
+              <% elsif user.rate >= 2000 %>
+              <%   user_color = "yellow" %>
+              <% elsif user.rate >= 1600 %>
+              <%   user_color = "blue" %>
+              <% elsif user.rate >= 1200 %>
+              <%   user_color = "cyan" %>
+              <% elsif user.rate >= 800 %>
+              <%   user_color = "green" %>
+              <% elsif user.rate >= 400 %>
+              <%   user_color = "brown" %>
+              <% elsif user.rate >= 0 %>
+              <%   user_color = "gray" %>
+              <% else %>
+              <%   user_color = "black" %>
+              <% end %>
+
+              <%= link_to(comment.user.name, "/users/#{comment.user.id}", :style => "color:#{user_color};") %>
+
             </div>
             <div class="comments-content">
               <%= comment.content %>

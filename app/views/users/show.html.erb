@@ -1,28 +1,28 @@
 <div class="main user-show">
   <div class="container">
+     <% user_color = "black" %>
+     <% user = @user %> 
+     <% if user.rate >= 2800    %>   
+     <%   user_color = "red" %>
+     <% elsif user.rate >= 2400 %>
+     <%   user_color = "orange" %>
+     <% elsif user.rate >= 2000 %>
+     <%   user_color = "yellow" %>
+     <% elsif user.rate >= 1600 %>
+     <%   user_color = "blue" %>
+     <% elsif user.rate >= 1200 %>
+     <%   user_color = "cyan" %>
+     <% elsif user.rate >= 800 %>
+     <%   user_color = "green" %>
+     <% elsif user.rate >= 400 %>
+     <%   user_color = "brown" %>
+     <% elsif user.rate >= 0 %>
+     <%   user_color = "gray" %>
+     <% else %>
+     <%   user_color = "black" %>
+     <% end %>
     <div class="user">
       <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <% user_color = "black" %>
-        <% user = @user %> 
-        <% if user.rate >= 2800    %>   
-        <%   user_color = "red" %>
-        <% elsif user.rate >= 2400 %>
-        <%   user_color = "orange" %>
-        <% elsif user.rate >= 2000 %>
-        <%   user_color = "yellow" %>
-        <% elsif user.rate >= 1600 %>
-        <%   user_color = "blue" %>
-        <% elsif user.rate >= 1200 %>
-        <%   user_color = "cyan" %>
-        <% elsif user.rate >= 800 %>
-        <%   user_color = "green" %>
-        <% elsif user.rate >= 400 %>
-        <%   user_color = "brown" %>
-        <% elsif user.rate >= 0 %>
-        <%   user_color = "gray" %>
-        <% else %>
-        <%   user_color = "black" %>
-        <% end %>
       <h2 class="user-color"><%= @user.name%></h2>
 
       <p> レート: <%= @user.rate %></p>
@@ -37,7 +37,7 @@
         </div>
         <div class="post-right">
           <div class="post-user-name">
-            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+            <%= link_to(post.user.name, "/users/#{post.user.id}", :style => "color:#{user_color};}") %>
           </div>
           <%= link_to(post.content, "/posts/#{post.id}") %>
         </div>

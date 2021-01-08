@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+#https://prog-8.comを参考にしました
 
   #ログイン関係
   get "login" => "users#login_form"

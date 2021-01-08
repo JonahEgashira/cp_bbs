@@ -1,3 +1,4 @@
+#https://prog-8.comを参考にしました
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}

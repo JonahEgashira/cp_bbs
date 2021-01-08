@@ -1,3 +1,4 @@
+#https://prog-8.comを参考にしました
 class ApplicationController < ActionController::Base
     before_action :set_current_user
 

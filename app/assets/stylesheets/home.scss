@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 //* reset ================================ */
 
+//https://prog-8.comを参考にしました
 * {
   box-sizing: border-box;
 }
@@ -100,7 +101,7 @@ header {
 .header-menus a {
   float: left;
   font-size: 13px;
-  color: gray;
+  color: red;
 }
 
 .header-menus .fa {
